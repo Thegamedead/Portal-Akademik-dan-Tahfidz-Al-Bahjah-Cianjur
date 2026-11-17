@@ -1,0 +1,342 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    /* Font Families */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-heading: 'Plus Jakarta Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    /* Design System Colors - Zamrud */
+    --color-zamrud-50: #E8F5F1;
+    --color-zamrud-100: #D1EBE3;
+    --color-zamrud-200: #A3D7C7;
+    --color-zamrud-300: #75C3AB;
+    --color-zamrud-400: #47AF8F;
+    --color-zamrud-500: #1B5E4F;
+    --color-zamrud-600: #164B3F;
+    --color-zamrud-700: #10382F;
+    --color-zamrud-800: #0B251F;
+    --color-zamrud-900: #051210;
+    --color-zamrud: #1B5E4F;
+
+    /* Design System Colors - Emas */
+    --color-emas-50: #FAF6E8;
+    --color-emas-100: #F5EDD1;
+    --color-emas-200: #EBDBA3;
+    --color-emas-300: #E1C975;
+    --color-emas-400: #D7B747;
+    --color-emas-500: #C9A227;
+    --color-emas-600: #A1821F;
+    --color-emas-700: #796117;
+    --color-emas-800: #51410F;
+    --color-emas-900: #282008;
+    --color-emas: #C9A227;
+
+    /* Design System Colors - Delima */
+    --color-delima-50: #F9EBEB;
+    --color-delima-100: #F3D7D7;
+    --color-delima-200: #E7AFAF;
+    --color-delima-300: #DB8787;
+    --color-delima-400: #CF5F5F;
+    --color-delima-500: #9B3A3A;
+    --color-delima-600: #7C2E2E;
+    --color-delima-700: #5D2323;
+    --color-delima-800: #3E1717;
+    --color-delima-900: #1F0C0C;
+    --color-delima: #9B3A3A;
+
+    /* Design System Colors - Biru Slate */
+    --color-biru-slate-50: #EDF2F5;
+    --color-biru-slate-100: #DBE5EB;
+    --color-biru-slate-200: #B7CBD7;
+    --color-biru-slate-300: #93B1C3;
+    --color-biru-slate-400: #6F97AF;
+    --color-biru-slate-500: #5B7A8C;
+    --color-biru-slate-600: #496270;
+    --color-biru-slate-700: #374954;
+    --color-biru-slate-800: #243138;
+    --color-biru-slate-900: #12181C;
+    --color-biru-slate: #5B7A8C;
+
+    /* Design System Colors - Kelabu Kertas */
+    --color-kelabu-kertas-50: #FFFFFF;
+    --color-kelabu-kertas-100: #F4F5F4;
+    --color-kelabu-kertas-200: #E9EBE9;
+    --color-kelabu-kertas-300: #DED1DE;
+    --color-kelabu-kertas-400: #D3D7D3;
+    --color-kelabu-kertas-500: #C8CCC8;
+    --color-kelabu-kertas-600: #A0A3A0;
+    --color-kelabu-kertas-700: #787A78;
+    --color-kelabu-kertas-800: #505250;
+    --color-kelabu-kertas-900: #282928;
+    --color-kelabu-kertas: #F4F5F4;
+
+    /* Design System Colors - Tinta */
+    --color-tinta-50: #E6E8E7;
+    --color-tinta-100: #CDD1CF;
+    --color-tinta-200: #9BA39F;
+    --color-tinta-300: #69756F;
+    --color-tinta-400: #37473F;
+    --color-tinta-500: #1A2422;
+    --color-tinta-600: #151D1B;
+    --color-tinta-700: #101614;
+    --color-tinta-800: #0A0E0D;
+    --color-tinta-900: #050706;
+    --color-tinta: #1A2422;
+}
+
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Badge Variants untuk Status Akademik (Registrasi Keluar Siswa)
+   Design System: Zamrud, Biru Slate, Delima dengan opacity /10 backgrounds
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.badge-zamrud {
+    background-color: rgba(27, 94, 79, 0.1); /* Zamrud /10 */
+    color: #1B5E4F; /* Zamrud */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-biru-slate {
+    background-color: rgba(91, 122, 140, 0.1); /* Biru Slate /10 */
+    color: #5B7A8C; /* Biru Slate */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-delima {
+    background-color: rgba(155, 58, 58, 0.1); /* Delima /10 */
+    color: #9B3A3A; /* Delima */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Custom Flatpickr Styling (Tidy up & Match Design System)
+   ═══════════════════════════════════════════════════════════════════════ */
+.flatpickr-calendar {
+    font-family: var(--font-sans) !important;
+    border: 1px solid #E5E7EB !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 0.75rem !important; /* Tailwind rounded-xl */
+    padding: 0.5rem !important;
+}
+
+.flatpickr-months .flatpickr-month {
+    font-family: var(--font-heading) !important;
+    background: transparent !important;
+    color: var(--color-tinta) !important;
+    fill: var(--color-tinta) !important;
+    height: 3rem !important;
+}
+
+.flatpickr-current-month {
+    font-size: 1.125rem !important; /* Tailwind text-lg */
+    font-weight: 600 !important;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+    font-weight: 600 !important;
+}
+
+span.flatpickr-weekday {
+    font-family: var(--font-sans) !important;
+    color: #6B7280 !important; /* Tailwind gray-500 */
+    font-weight: 600 !important;
+    font-size: 0.875rem !important; /* Tailwind text-sm */
+}
+
+.flatpickr-day {
+    border-radius: 0.5rem !important; /* Tailwind rounded-lg */
+    font-size: 0.875rem !important;
+    color: var(--color-tinta) !important;
+    transition: all 0.2s ease !important;
+}
+
+.flatpickr-day:hover, .flatpickr-day:focus {
+    background: var(--color-zamrud-50) !important;
+    border-color: var(--color-zamrud-100) !important;
+    color: var(--color-zamrud) !important;
+}
+
+.flatpickr-day.selected, 
+.flatpickr-day.startRange, 
+.flatpickr-day.endRange, 
+.flatpickr-day.selected.inRange, 
+.flatpickr-day.startRange.inRange, 
+.flatpickr-day.endRange.inRange, 
+.flatpickr-day.selected:focus, 
+.flatpickr-day.startRange:focus, 
+.flatpickr-day.endRange:focus, 
+.flatpickr-day.selected:hover, 
+.flatpickr-day.startRange:hover, 
+.flatpickr-day.endRange:hover, 
+.flatpickr-day.selected.prevMonthDay, 
+.flatpickr-day.startRange.prevMonthDay, 
+.flatpickr-day.endRange.prevMonthDay, 
+.flatpickr-day.selected.nextMonthDay, 
+.flatpickr-day.startRange.nextMonthDay, 
+.flatpickr-day.endRange.nextMonthDay {
+    background: var(--color-zamrud) !important;
+    border-color: var(--color-zamrud) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+}
+
+.flatpickr-day.today {
+    border-color: var(--color-zamrud-300) !important;
+}
+
+.flatpickr-day.today:hover, .flatpickr-day.today:focus {
+    border-color: var(--color-zamrud) !important;
+    background: var(--color-zamrud-50) !important;
+    color: var(--color-zamrud) !important;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+    fill: var(--color-zamrud) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Standar Tombol Modal / Popup
+   Digunakan di seluruh form popup agar seragam.
+
+   WAJIB digunakan di semua modal/popup:
+     .btn-modal-confirm → Tombol aksi proses (zamrud/hijau)
+     .btn-modal-cancel  → Tombol batal/kembali (delima/merah maroon)
+
+   Penggunaan:
+     <button class="btn-modal-confirm">Simpan</button>
+     <button class="btn-modal-cancel">Batal</button>
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.btn-modal-confirm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0.5rem;
+    border: 1.5px solid #1B5E4F;
+    background-color: #1B5E4F;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    outline: none;
+    white-space: nowrap;
+}
+
+.btn-modal-confirm:hover {
+    background-color: #164A3C;
+    border-color: #164A3C;
+}
+
+.btn-modal-confirm:active {
+    background-color: #0F3328;
+    transform: scale(0.98);
+}
+
+.btn-modal-confirm:focus-visible {
+    outline: 2px solid #1B5E4F;
+    outline-offset: 2px;
+}
+
+.btn-modal-confirm:disabled,
+.btn-modal-confirm[disabled] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-modal-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    border-radius: 0.5rem;
+    border: 1.5px solid #9B3A3A;
+    background-color: #9B3A3A;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    outline: none;
+    white-space: nowrap;
+}
+
+.btn-modal-cancel:hover {
+    background-color: #7A2D2D;
+    border-color: #7A2D2D;
+}
+
+.btn-modal-cancel:active {
+    background-color: #5E2222;
+    transform: scale(0.98);
+}
+
+.btn-modal-cancel:focus-visible {
+    outline: 2px solid #9B3A3A;
+    outline-offset: 2px;
+}
+
+/* Variant flex-1 untuk layout tombol berdampingan */
+.btn-modal-confirm.flex-1,
+.btn-modal-cancel.flex-1 {
+    flex: 1 1 0%;
+}
+
+
+/* Pastikan konten modal tetap bisa di-klik meskipun backdrop transparan (pointer-events-none) */
+.fixed.inset-0.pointer-events-none > div, 
+.fixed.inset-0[style*='pointer-events: none'] > div {
+    pointer-events: auto;
+}
+
+/* Global flatpickr input border and styling */
+input.flatpickr-input,
+.flatpickr-input.form-control,
+input[type="text"].flatpickr-input {
+    border: 1.5px solid #D1D5DB !important;
+    border-radius: 0.5rem !important;
+    padding: 0.625rem 0.875rem !important;
+    background-color: #FFFFFF !important;
+    color: #1A2422 !important;
+    width: 100% !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+    outline: none !important;
+}
+
+input.flatpickr-input:focus,
+.flatpickr-input.form-control:focus,
+input[type="text"].flatpickr-input:focus {
+    border-color: #1B5E4F !important;
+    box-shadow: 0 0 0 2px rgba(27, 94, 79, 0.2) !important;
+}
+

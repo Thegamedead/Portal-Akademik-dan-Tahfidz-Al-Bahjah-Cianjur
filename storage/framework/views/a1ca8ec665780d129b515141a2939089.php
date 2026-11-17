@@ -1,0 +1,1 @@
+row-<?php echo e($tabAktif); ?>-<?php echo e($akun->id); ?><?php /**PATH C:\laragon\www\Sistem-Informasi-Tahfidz-SMP\storage\framework\views/be2bfd652567bf9dacb5804c3910899b.blade.php ENDPATH**/ ?>
